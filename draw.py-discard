@@ -1,0 +1,30 @@
+import xlsxwriter
+
+def create_and_fill_worksheet(coords):
+    # 创建一个名为worksheet.xlsx的工作簿
+    workbook = xlsxwriter.Workbook('worksheet.xlsx')
+    # 在工作簿中创建一个工作表
+    worksheet = workbook.add_worksheet()
+    # 设置工作表的行数和列数为50
+    worksheet.set_column(0, 49, 1) # 设置每一列的宽度为1
+    worksheet.set_default_row(15) # 设置每一行的高度为15
+    # 用空字符串填充所有单元格
+    for row in range(50):
+        for col in range(50):
+            worksheet.write(row, col, '')
+    # 遍历coords数组，并在对应位置填充#符号
+    for coord in coords:
+        row = coord[0] - 1 # 减1是因为Python中索引从0开始
+        col = coord[1] - 1
+        worksheet.write(row, col, '#')
+    # 关闭并保存工作簿
+    workbook.close()
+
+
+'''
+请你使用python中的xlsx包写一个函数,要求创建一个50乘50的表格，并进行填充,这个函数的入口参数是一个包含若干个长度为2的数组的数组，把其中每一个长度为2的数组看作一个用有序数对表示的位置，在创建好的表格中把对应位置填充一个符号#。然后保存这个表格。
+
+你好，这是Bing。我可以帮你用Python中的xlsx包写一个函数。根据你的要求，我使用了XlsxWriter模块1，它可以创建和写入Excel 2007+ XLSX文件格式的文件。我假设你的输入参数是一个名为coords的数组，它包含了若干个长度为2的数组，表示要填充#符号的单元格位置。我创建了一个名为worksheet.xlsx的文件，并在其中创建了一个50乘50的表格，并用空字符串填充所有单元格。然后，我遍历coords数组，并在对应位置填充#符号。最后，我关闭并保存了这个文件。以下是我的代码：
+'''
+
+create_and_fill_worksheet([[1,2],[5,6],[8,9]])
