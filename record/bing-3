@@ -1,0 +1,49 @@
+这是一个用于在一个50乘50的地图表格画红色点的函数，我需要你改进它，要求是添加一个入口参数，同样是一个包含若干个长度为2的数组的数组，对于这个参数我要求你在地图中用蓝色画出其中的每个点，代码如下：def plot_map(obstacles): # 创建一个50×50的网格图形，并设置坐标轴范围和刻度间距 plt.figure(figsize=(5, 5)) plt.xlim(0, 49) plt.ylim(0, 49) plt.xticks(range(0, 50)) plt.yticks(range(0, 50)) # 绘制网格线 plt.grid(True) # 将障碍物的坐标分别存储在两个列表中 x_coords = [] y_coords = [] for obstacle in obstacles: x_coords.append(obstacle[0]) y_coords.append(obstacle[1]) # 使用红色的圆点来表示障碍物 plt.scatter(x_coords, y_coords, color='red', marker='o') # 显示图形 plt.show()
+已发送电子邮件. 这是一个用于在一个50乘50的地图表格画红色点的函数，我需要你改进它，要求是添加一个入口参数，同样是一个包含若干个长度为2的数组的数组，对于这个参数我要求你在地图中用蓝色画出其中的每个点，代码如下：def plot_map(obstacles): # 创建一个50×50的网格图形，并设置坐标轴范围和刻度间距 plt.figure(figsize=(5, 5)) plt.xlim(0, 49) plt.ylim(0, 49) plt.xticks(range(0, 50)) plt.yticks(range(0, 50)) # 绘制网格线 plt.grid(True) # 将障碍物的坐标分别存储在两个列表中 x_coords = [] y_coords = [] for obstacle in obstacles: x_coords.append(obstacle[0]) y_coords.append(obstacle[1]) # 使用红色的圆点来表示障碍物 plt.scatter(x_coords, y_coords, color='red', marker='o') # 显示图形 plt.show()
+你好，这是Bing。我可以帮助你改进你的函数。以下是我生成的代码，它添加了一个名为points的入口参数，用于绘制蓝色的点。我使用了一个for循环来遍历points中的每个坐标，并用plt.scatter函数来绘制它们。我还在代码中添加了一些注释来解释我的逻辑。
+
+def plot_map(obstacles, points):
+    # 创建一个50×50的网格图形，并设置坐标轴范围和刻度间距
+    plt.figure(figsize=(5, 5))
+    plt.xlim(0, 49)
+    plt.ylim(0, 49)
+    plt.xticks(range(0, 50))
+    plt.yticks(range(0, 50))
+
+    # 绘制网格线
+    plt.grid(True)
+
+    # 将障碍物的坐标分别存储在两个列表中
+    x_coords = []
+    y_coords = []
+
+    for obstacle in obstacles:
+        x_coords.append(obstacle[0])
+        y_coords.append(obstacle[1])
+
+    # 使用红色的圆点来表示障碍物
+    plt.scatter(x_coords, y_coords, color='red', marker='o')
+
+    # 将要绘制的点的坐标分别存储在两个列表中
+    x_points = []
+    y_points = []
+
+    for point in points:
+        x_points.append(point[0])
+        y_points.append(point[1])
+
+    # 使用蓝色的圆点来表示要绘制的点
+    plt.scatter(x_points, y_points, color='blue', marker='o')
+
+    # 显示图形
+    plt.show()
+已收到消息. 你好，这是Bing。我可以帮助你改进你的函数。以下是我生成的代码，它添加了一个名为points的入口参数，用于绘制蓝色的点。我使用了一个for循环来遍历points中的每个坐标，并用plt.scatter函数来绘制它们。我还在代码中添加了一些注释来解释我的逻辑。 ```python def plot_map(obstacles, points): # 创建一个50×50的网格图形，并设置坐标轴范围和刻度间距 plt.figure(figsize=(5, 5)) plt.xlim(0, 49) plt.ylim(0, 49) plt.xticks(range(0, 50)) plt.yticks(range(0, 50)) # 绘制网格线 plt.grid(True) # 将障碍物的坐标分别存储在两个列表中 x_coords = [] y_coords = [] for obstacle in obstacles: x_coords.append(obstacle[0]) y_coords.append(obstacle[1]) # 使用红色的圆点来表示障碍物 plt.scatter(x_coords, y_coords, color='red', marker='o') # 将要绘制的点的坐标分别存储在两个列表中 x_points = [] y_points = [] for point in points: x_points.append(point[0]) y_points.append(point[1]) # 使用蓝色的圆点来表示要绘制的点 plt.scatter(x_points, y_points, color='blue', marker='o') # 显示图形 plt.show() ```
+1
+共
+10
+
+点赞
+取消点赞更多
+bing ai
+已发送电子邮件. bing ai
+Get the most out of your searches with our brand new engine! We've used Microsoft Bing's rich results as a base and added AI for an even better experience.
